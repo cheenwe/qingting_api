@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors       = ["cheenwe"]
   s.email         = ["cheenwe@gmail.com"]
 
-  s.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  s.description   = %q{TODO: Write a longer description or delete this line.}
+  s.summary       = "Qingting Fm ruby api"
+  s.description   = "Qingting Fm ruby api"
   s.homepage      = "https://github.com/cheenwe/qingting_api"
   s.license       = "MIT"
 
