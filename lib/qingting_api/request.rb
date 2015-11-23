@@ -38,7 +38,7 @@ module QingtingApi
 
     # Base uri for Qingting API
     def base_url
-      "#{QingtingApi.config.base_url}"
+      "#{QingtingApi.config.base_url}/#{QingtingApi.config.api_version}/media"
     end
 
     module_function :post, :get, :result, :base_url

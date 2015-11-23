@@ -1,4 +1,6 @@
 # encoding: utf-8
+require 'net/http'
+require 'active_support/json'
 
 module QingtingApi
   # Module that handle user information
@@ -6,20 +8,31 @@ module QingtingApi
   module Account
     module_function
 
-    # 获取用户信息
+    # 获取账户 token
     #
-    def info
-      Request.post "access?&grant_type=client_credentials&client_id=#{QingtingApi.config.client_id}&client_secret=#{QingtingApi.config.client_secret}"
+    def access_token
+      post "access?&grant_type=client_credentials&client_id=#{QingtingApi.config.client_id}&client_secret=#{QingtingApi.config.client_secret}"
     end
 
-    # 设置用户信息
-    #
-    #   * emergency_contact: 紧急联系人
-    #   * emergency_mobile:  紧急联系人手机号
-    #   * alarm_balance:     短信余额提醒阈值。一天只提示一次
-    #
-    def set(options = {})
-      Request.post 'user/set.json', options
+
+    def post(api, options = {})
+      uri = URI.join(QingtingApi.config.base_url, api)
+      res = Net::HTTP.post_form(uri, options)
+      result res.body
+    end
+
+
+    def result(body)
+      begin
+       resule =  ActiveSupport::JSON.decode body
+       resule['access_token']
+      rescue => e
+        {
+          code: 502,
+          msg: '内容解析错误',
+          detail: e.to_s
+        }
+      end
     end
   end
 end
