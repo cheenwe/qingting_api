@@ -1,6 +1,7 @@
 require "qingting_api/version"
 require 'qingting_api/config'
 require 'qingting_api/request'
+require 'qingting_api/qing_ting'
 
 require 'qingting_api/account'
 
@@ -11,6 +12,6 @@ unless defined? ActiveRecord
 end
 
 module QingtingApi
-  include Base::Info
+  include QingTing
 
 end
