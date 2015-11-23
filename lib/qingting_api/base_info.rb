@@ -1,6 +1,6 @@
 module QingtingApi
   # Message service: methods that are used to manage messages
-  module QingtingApi::Base
+  module Base::Info
 
     def self.included(base)
       base.send :extend, ClassMethods

@@ -11,6 +11,6 @@ unless defined? ActiveRecord
 end
 
 module QingtingApi
-  include QingtingApi::Base
+  include Base::Info
 
 end
