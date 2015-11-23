@@ -33,4 +33,5 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "bundler", "~> 1.10"
   s.add_development_dependency "rake", "~> 10.0"
+  s.add_development_dependency 'rails', ['>= 3.1.0']
 end

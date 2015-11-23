@@ -2,7 +2,7 @@
 
 QingtingApi.configure do |config|
 
-    config.base_url                     = "http://api.open.qingting.fm"    # api url
+    # config.base_url                     = "http://api.open.qingting.fm"    # api url
     # config.client_id                     = "ZTk4MzAwMzAtYWFiOC0xMWU0LTkyM2YtMDAxNjNlMDAyMGFk"     # 授权 API client_id
     # config.client_secret                     = "OTdiNmI0MWEtYzhiZC0zYWE1LWExZmEtMDU0OWZhNTljZmRk"          # 授权 API client_secret
     # config.api_version                 = :v6    # API 的版本,目前有v6

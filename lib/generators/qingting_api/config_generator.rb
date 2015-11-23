@@ -1,3 +1,6 @@
+require 'rails/generators'
+require 'rails/generators/active_record'
+
 module QingtingApi
   module Generators
     class ConfigGenerator < Rails::Generators::Base
