@@ -16,11 +16,37 @@ module QingtingApi
     # Method that use `Net::HTTP.get` to perform `GET` action
     #
     def get(api, options = {})
-      uri = URI.join(base_url, api)
-      result Net::HTTP.get(uri, options)
+      puts ">>>>>>>>>>>>>in get "
+      url = URI.join(base_url, api)
+
+      puts "---------------->>#{url} ----------------------"
+
+      result Net::HTTP.get(url)
+
+
+      # uri = URI('http://example.com/index.html')
+      # params = { :limit => 10, :page => 3 }
+      # uri.query = URI.encode_www_form(params)
+
+      # res = Net::HTTP.get_response(uri)
+
+
+
+      # uri = URI.parse @url
+      # http = Net::HTTP.new(uri.host, uri.port)
+      # request = Net::HTTP::Get.new(uri, options)
+      # # # http.use_ssl = true
+      # http.request(request)
     end
 
     private
+
+    # def url
+    #   # http://api.open.qingting.fm/v6/media/mediacenterlist?access_token=ZTQwMWMyMzctYTFmMi00ZjczLTljOWYtM2Y2YmQ0NzZhODUz
+    #   @url = "#{QingtingApi.config.base_url}/v6/media/#{}/&from=#{@options[:from]}&to=#{@options[:to]}"
+    # rescue
+    #   puts "参数错误!"
+    # end
 
     # Method that parse JSON to Hash
     #
@@ -38,7 +64,7 @@ module QingtingApi
 
     # Base uri for Qingting API
     def base_url
-      "#{QingtingApi.config.base_url}/#{QingtingApi.config.api_version}/media"
+      "#{QingtingApi.config.base_url}"
     end
 
     module_function :post, :get, :result, :base_url
