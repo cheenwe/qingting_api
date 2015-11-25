@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'activerecord', ['>= 3.0', '< 5.0']
   s.add_dependency 'activesupport', ['>= 3.0', '< 5.0']
 
-  s.add_development_dependency "bundler", "~> 1.10"
-  s.add_development_dependency "rake", "~> 10.0"
+  s.add_development_dependency 'bundler', ['>= 1.0.0']
+  s.add_development_dependency 'rake', ['>= 0']
   s.add_development_dependency 'rails', ['>= 3.1.0']
 end
