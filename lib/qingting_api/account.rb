@@ -11,7 +11,6 @@ module QingtingApi
     # 获取账户 token
     #
     def access_token
-      # post "access?&grant_type=client_credentials&client_id=#{QingtingApi.config.client_id}&client_secret=#{QingtingApi.config.client_secret}"
       post 'access', grant_type: "client_credentials", client_id: QingtingApi.config.client_id, client_secret:QingtingApi.config.client_secret
     end
 
