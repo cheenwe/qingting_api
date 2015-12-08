@@ -32,12 +32,20 @@ module QingtingApi
 				Request.get  "/#{QingtingApi.config.api_version}/media/#{name}/#{id}?access_token=#{token}"
 			end
 
-			def catrgory_channel(category_id, curpage)
-				Request.get  "/#{QingtingApi.config.api_version}/media/categories/#{category_id}/channels/order/0/curpage/#{curpage}/pagesize/30?access_token=#{token}"
+			def catrgory_channel(category_id, curpage, page_size={})
+				if page_size.present?
+				Request.get  "/#{QingtingApi.config.api_version}/media/categories/#{category_id}/channels/order/0/curpage/#{curpage}/pagesize/#{page_size}?access_token=#{token}"
+				else
+				Request.get  "/#{QingtingApi.config.api_version}/media/categories/#{category_id}/channels/order/0/curpage/#{curpage}/pagesize/#{QingtingApi.config.page_size}?access_token=#{token}"
+				end
 			end
 
-			def ondemand_channel(category_id, curpage)
-				Request.get  "/#{QingtingApi.config.api_version}/media/channelondemands/#{category_id}/programs/curpage/#{curpage}/pagesize/30?access_token=#{token}"
+			def ondemand_channel(category_id, curpage, page_size={})
+				if page_size.present?
+					Request.get  "/#{QingtingApi.config.api_version}/media/channelondemands/#{category_id}/programs/curpage/#{curpage}/pagesize/#{page_size}?access_token=#{token}"
+				else
+					Request.get  "/#{QingtingApi.config.api_version}/media/channelondemands/#{category_id}/programs/curpage/#{curpage}/pagesize/#{QingtingApi.config.page_size}?access_token=#{token}"
+				end
 			end
 
 			def live_channel(channel_id, day)

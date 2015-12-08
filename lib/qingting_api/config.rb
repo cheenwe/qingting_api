@@ -37,7 +37,7 @@ module QingtingApi
     config.client_secret                     = "OTdiNmI0MWEtYzhiZC0zYWE1LWExZmEtMDU0OWZhNTljZmRk"
     config.api_version                 = :v6
     config.page_num                    = 1
-    config.page_size                   = 20
+    config.page_size                   = 30
     config.company                     = 'Cheenwe'
     config.expires_in                  = 7200.second
   end
