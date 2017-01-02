@@ -1,52 +1,43 @@
 # encoding: utf-8
 require 'net/http'
-require 'active_support/json'
+require 'json'
 
 module QingtingApi
-  # Module that manage requests
   module Request
-    # Method that use `Net::HTTP.post_form` to perform `POST` action
-    #
-    def post(api, options = {})
-      uri = URI.join(base_url, api)
-      res = Net::HTTP.post_form(uri, options)
-      result res.body
+    extend self
+
+    def get(url, params: nil, headers: {})
+      send_request(:get, url, params: params, headers: headers)
     end
 
-    # Method that use `Net::HTTP.get` to perform `GET` action
-    #
-    def get(api, options = {})
-      url = URI.join(base_url, api)
-      result Net::HTTP.get(url)
-
-      # uri = URI('http://example.com/index.html')
-      # params = { :limit => 10, :page => 3 }
-      # uri.query = URI.encode_www_form(params)
-
-      # res = Net::HTTP.get_response(uri)
+    def post(url, body: , headers: {})
+      send_request(:post, url, body: body, headers: headers)
     end
 
-    private
-
-    # Method that parse JSON to Hash
-    #
-    def result(body)
-      begin
-        ActiveSupport::JSON.decode body
-      rescue => e
-        {
-          code: 502,
-          msg: '内容解析错误',
-          detail: e.to_s
-        }
-      end
+    def put(url, body: , headers: {})
+      send_request(:put, url, body: body, headers: headers)
     end
 
-    # Base uri for Qingting API
-    def base_url
-      "#{QingtingApi.config.base_url}"
+    def delete(url, params: nil, headers: {})
+      send_request(:delete, url, params: params, headers: headers)
     end
 
-    module_function :post, :get, :result, :base_url
+    def send_request(method, url, params: nil, body: nil, headers: {}, opts: {})
+      raw_response = Utils::Http.new(
+        method.to_sym,
+        url,
+        params: params,
+        body: body,
+        headers: headers,
+        opts: opts
+      ).send_request
+
+      parse_body(raw_response.body)
+    end
+
+    def parse_body(body)
+      JSON.parse(body)
+    end
+
   end
 end

@@ -1,9 +1,10 @@
 # QingtingApi
 
-蜻蜓FM,接口
-http://open.qingting.fm/documents/API%20%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/
+蜻蜓FM  Ruby API
 
-## 安装  
+[API 开发文档](http://open.qingting.fm/documents/API%20%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/)
+
+## 安装
 
 在您的 `Gemfile` 里面添加:
 
@@ -16,14 +17,14 @@ gem 'qingting_api'
 ``` bash
 # 安装gem
 bundle
- 
+
 rails g qingting_api:config  # 将会拷贝配置文件至 `config/initializers/qingting_api.rb`
 ```
 
 ## 配置
 
 ``` ruby
-SmartSMS.configure do |config|
+QingtingApi.configure do |config|
 
     # config.base_url                     = "http://api.open.qingting.fm"    # api url
     # config.client_id                     = "ZTk4MzAwMzAtYWFiOC0xMWU0LTkyM2YtMDAxNjNlMDAyMGFk"     # 授权 API client_id
@@ -51,7 +52,7 @@ end
 |QingtingApi.get("categories/5") /QingtingApi.get_id("categories",5)  | /v6/media/categories/5  |直播分类及获取直播属性
 |QingtingApi.get("categories/5") /QingtingApi.get_id("categories",5)   | /v6/media/categories/#{category_id} |获取分类属性
 |QingtingApi.catrgory_channel(category_id, curpage, page_size)    | /v6/media/categories/#{category_id}/channels/order/0/curpage/#{curpage}/pagesize/30 |获取分类下的所有电台或直播电台
- 
+
 #### 点播(OnDemand)
 
 > |方法|API|说明
@@ -76,8 +77,8 @@ end
 #### 搜索
 > |方法|API|说明
 |:-----  |:-------|-----                               |
-|QingtingApi.search("上海") /QingtingApi.search("上海","channel_ondemand") |  /search/#{keyword}/type/#{type}| 搜索 
- 
+|QingtingApi.search("上海") /QingtingApi.search("上海","channel_ondemand") |  /search/#{keyword}/type/#{type}| 搜索
+
 
 
 ## Change log
@@ -85,6 +86,7 @@ end
 > |时间|版本|说明|
 |:-----  |:-------|-----                               |
 |2015.12.08  | 0.1.5 |添加自定义分页参数                       |
+|2016.12.31  | 0.2.0 |API 接口更新                     |
 
 ## Contributing
 

@@ -21,8 +21,8 @@ module QingtingApi
 						code: 404,
 						msg: 'NOT FIND'
 					}
-				end
 			end
+		end
 
 			def get(name)
 				Request.get  "/#{QingtingApi.config.api_version}/media/#{name}?access_token=#{token}"
