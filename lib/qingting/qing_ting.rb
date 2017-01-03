@@ -61,7 +61,7 @@ module Qingting
 			end
 
 			def token
-				Qingting::Account.access_token
+				Account.access_token
 			end
 
 		end
