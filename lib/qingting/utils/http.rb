@@ -1,7 +1,7 @@
 require 'net/http'
 require 'json'
 
-module QingtingApi
+module Qingting
   module Utils
     class Http
 

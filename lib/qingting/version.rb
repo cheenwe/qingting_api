@@ -1,3 +1,3 @@
-module QingtingApi
+module Qingting
   VERSION = "0.1.5"
 end

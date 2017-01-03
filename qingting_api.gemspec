@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'qingting_api/version'
+require 'qingting/version'
 
 Gem::Specification.new do |s|
   s.name          = "qingting_api"
-  s.version       = QingtingApi::VERSION
+  s.version       = Qingting::VERSION
   s.authors       = ["cheenwe"]
-  s.email         = ["cheenwe@gmail.com"]
+  s.email         = ["cxhyun@126.com"]
 
-  s.summary       = "Qingting Fm ruby api"
-  s.description   = "Qingting Fm ruby api"
+  s.summary       = "QingtingFM ruby api"
+  s.description   = "蜻蜓 FM Ruby API"
   s.homepage      = "https://github.com/cheenwe/qingting_api"
   s.license       = "MIT"
 
@@ -20,11 +20,11 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
 
-  s.add_dependency 'activerecord', ['>= 3.0', '< 5.0']
-  s.add_dependency 'activesupport', ['>= 3.0', '< 5.0']
+  # s.add_dependency 'activerecord', ['>= 3.0']
+  # s.add_dependency 'activesupport', ['>= 3.0']
 
   s.add_development_dependency 'bundler', ['>= 1.0.0']
   s.add_development_dependency 'rake', ['>= 0']
-  s.add_development_dependency 'rails', ['>= 3.1.0']
-  s.add_development_dependency "rspec"
+  # s.add_development_dependency 'rails', ['>= 3.1.0']
+  # s.add_development_dependency "rspec"
 end

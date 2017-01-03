@@ -1,18 +1,10 @@
-require "qingting_api/version"
-require 'qingting_api/config'
-require "qingting_api/utils/http"
-require 'qingting_api/account'
-require 'qingting_api/request'
-require 'qingting_api/qing_ting'
-
-
-unless defined? ActiveRecord
-  begin
-    require 'active_record'
-  rescue LoadError; end
-end
+require "qingting/version"
+require 'qingting/config'
+require "qingting/utils/http"
+require 'qingting/request'
+require 'qingting/account'
+require 'qingting/qing_ting'
 
 module QingtingApi
-  include QingTing
-
+  include Qingting
 end

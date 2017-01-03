@@ -1,14 +1,14 @@
 require 'rails/generators'
 require 'rails/generators/active_record'
 
-module QingtingApi
+module Qingting
   module Generators
     class ConfigGenerator < Rails::Generators::Base
       source_root File.expand_path(File.join(File.dirname(__FILE__), 'templates'))
 
       desc <<-DESC
 Description:
-    Copies QingtingApi configuration file to your application's initializer directory.
+    Copies Qingting configuration file to your application's initializer directory.
 DESC
 
       def copy_config_file

@@ -2,7 +2,7 @@
 require 'net/http'
 require 'json'
 
-module QingtingApi
+module Qingting
   module Request
     extend self
 
@@ -10,11 +10,11 @@ module QingtingApi
       send_request(:get, url, params: params, headers: headers)
     end
 
-    def post(url, body: , headers: {})
-      send_request(:post, url, body: body, headers: headers)
+    def post(url, body: {}, params: {}, headers: {})
+      send_request(:post, url, params: params, body: body, headers: headers)
     end
 
-    def put(url, body: , headers: {})
+    def put(url, body: {}, headers: {})
       send_request(:put, url, body: body, headers: headers)
     end
 
@@ -23,7 +23,17 @@ module QingtingApi
     end
 
     def send_request(method, url, params: nil, body: nil, headers: {}, opts: {})
-      raw_response = Utils::Http.new(
+
+      # puts ">>>>>>>http start>>>>>>>>>"
+      # puts "<method>    #{method}"
+      # puts "<url>    #{url}"
+      # puts "<params>    #{params}"
+      # puts "<body>    #{body}"
+      # puts "<headers>    #{headers}"
+      # puts "<opts>    #{opts}"
+      # puts ">>>>>>>http end>>>>>>>>>"
+
+      raw_response = Qingting::Utils::Http.new(
         method.to_sym,
         url,
         params: params,
@@ -31,6 +41,8 @@ module QingtingApi
         headers: headers,
         opts: opts
       ).send_request
+
+      # puts ">>>>>>>>>>.#{raw_response}"
 
       parse_body(raw_response.body)
     end

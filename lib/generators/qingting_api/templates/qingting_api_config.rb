@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-QingtingApi.configure do |config|
+Qingting.configure do |config|
 
     # config.base_url                     = "http://api.open.qingting.fm"    # api url
     # config.client_id                     = "ZTk4MzAwMzAtYWFiOC0xMWU0LTkyM2YtMDAxNjNlMDAyMGFk"     # 授权 API client_id
