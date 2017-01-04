@@ -3,6 +3,7 @@ require 'net/http'
 require 'json'
 
 module Qingting
+  module Utils
   module Request
     extend self
 
@@ -33,7 +34,7 @@ module Qingting
       # puts "<opts>    #{opts}"
       # puts ">>>>>>>http end>>>>>>>>>"
 
-      raw_response = Qingting::Utils::Http.new(
+      raw_response = Utils::Http.new(
         method.to_sym,
         url,
         params: params,
@@ -51,5 +52,6 @@ module Qingting
       JSON.parse(body)
     end
 
+  end
   end
 end
