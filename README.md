@@ -75,7 +75,6 @@ Autho2.0授权
 | QingtingApi.channel(id)| /wapi/channels/#{channel_id} | <a href="http://open.qingting.fm/documents/documents/(新)获取点播电台/">(新)获取点播电台</a> | |
 | QingtingApi.wapi_programs(channel_id, curpage, page_size) | /wapi/channelondemands/#{channel_id}/programs/curpage/#{curpage}/pagesize/#{pagesize} | <a href="http://open.qingting.fm/documents/documents/(新)获取点播电台节目单/">(新)获取点播电台节目单</a> | |
 | QingtingApi.programs(channel_id, curpage, page_size) | /v6/media/channelondemands/#{channel_id}/programs/curpage/#{curpage}/pagesize/30 | <a href="http://open.qingting.fm/documents/documents/获取点播电台下的点播节目/">获取点播电台下的点播节目</a> | |
-
 | QingtingApi.program(id) | /v6/media/programs/#{programid} | <a href="http://open.qingting.fm/documents/documents/获取点播节目/">获取点播节目</a> | |
 | QingtingApi.recommends(channel_id, curpage, page_size) | /v6/media/channelondemands/#{channel_id}/recommends/curpage/#{curpage}/pagesize/#{pagesize} | <a href="http://open.qingting.fm/documents/documents/获取电台推荐列表/">获取电台推荐列表</a> | |
 
@@ -103,8 +102,8 @@ Autho2.0授权
 
 | 方法 | API | 接口文档 | 说明 |
 | --- | --- | --- | --- |
-| QingtingApi.recommends_billboards_channellives | /v6/media/recommends/billboards/channellives | <a href="http://open.qingting.fm/documents/documents/电台排行榜/">电台排行榜</a> | |
-| QingtingApi.recommends_billboards_programondemands | /v6/media/recommends/billboards/programondemands | <a href="http://open.qingting.fm/documents/documents/点播节目排行榜/">点播节目排行榜</a> | |
+| QingtingApi.billboards_lives | /v6/media/recommends/billboards/channellives | <a href="http://open.qingting.fm/documents/documents/电台排行榜/">电台排行榜</a> | |
+| QingtingApi.billboards_ondemands | /v6/media/recommends/billboards/programondemands | <a href="http://open.qingting.fm/documents/documents/点播节目排行榜/">点播节目排行榜</a> | |
 | QingtingApi.categories_billboard(category_id) | /wapi/categories/#{category_id}/channels/billboard | <a href="http://open.qingting.fm/documents/documents/分类排行榜/">分类排行榜</a> | |
 | QingtingApi.type_billboard(category_id,type) | /v6/media/categories/#{category_id}/channels/billboard/#{type} | <a href="http://open.qingting.fm/documents/documents/获取不同类型的分类排行榜/">获取不同类型的分类排行榜</a> | |
 

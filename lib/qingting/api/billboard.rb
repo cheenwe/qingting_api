@@ -12,13 +12,13 @@ module Qingting
       # Class methods
       module ClassMethods
 
-        def recommends_billboards_channellives
-          url = eval("Base.v6_recommends_billboards_channellives")
+        def billboards_lives
+          url = eval("Base.v6_billboards_lives")
           Base.request(url)
         end
 
-        def recommends_billboards_programondemands
-          url = eval("Base.v6_recommends_billboards_programondemands")
+        def billboards_ondemands
+          url = eval("Base.v6_billboards_ondemands")
           Base.request(url)
         end
 
